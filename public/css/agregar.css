@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el formulario de agregar contrato */
+  .add-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #12cbe4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-form-title {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para los botones de Ir a Inicio y Listar Contratos */
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .home-button,
+  .list-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .home-button:hover,
+  .list-button:hover {
+    background-color: #054385;
+  }
+  

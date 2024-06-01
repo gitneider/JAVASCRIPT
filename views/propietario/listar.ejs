@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Propietarios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6e6e6; /* Cambio de color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px; /* Aumento del ancho máximo */
+    margin: 50px auto; /* Aumento de margen superior e inferior */
+    padding: 40px; /* Aumento de relleno */
+    background-color: #ffffff;
+    border-radius: 15px; /* Aumento del radio de borde */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Aumento de la sombra */
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 30px; /* Aumento del margen inferior */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #dddddd; /* Cambio de color del borde */
+}
+
+thead {
+    background-color: #4CAF50; /* Cambio de color de fondo del encabezado */
+    color: #ffffff; /* Cambio de color de texto */
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #f2f2f2; /* Cambio de color de fondo de las filas impares */
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-atras {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px; /* Reducción del radio de borde */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background-color: #007bff; /* Cambio de color para editar */
+}
+
+.btn-eliminar {
+    background-color: #dc3545; /* Cambio de color para eliminar */
+}
+
+.btn-atras {
+    display: block;
+    margin-top: 10px;
+    background-color: #6c757d; /* Cambio de color para el botón "Atrás" */
+    text-align: center;
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover,
+.btn-atras:hover {
+    background-color: #555555; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos de iconos */
+i.fas {
+    margin-right: 5px;
+}
+
+/* Animaciones */
+@keyframes colorChange {
+    0% { background-color: #4CAF50; }
+    25% { background-color: #007bff; }
+    50% { background-color: #dc3545; }
+    75% { background-color: #6c757d; }
+    100% { background-color: #4CAF50; }
+}
+
+table thead {
+    animation: colorChange 5s infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+       
+} 
+
+  </style>
+</head>
+<body>
+  <!-- Listado de Propietarios -->
+  <div class="propietario-list">
+    <h1 class="propietario-list-title">Listado de Propietarios</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Email</th>
+            <th>Genero</th>
+            <th>Telefono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% propietarios.forEach((propietario) => { %>
+            <tr>
+              <td><%= propietario.Id %></td>
+              <td><%= propietario.clave %></td>
+              <td><%= propietario.nombre %></td>
+              <td><%= propietario.apellido %></td>
+              <td><%= propietario.fechaNacimiento %></td>
+              <td><%= propietario.email %></td>
+              <td><%= propietario.genero %></td>
+              <td><%= propietario.telefono %></td>
+              <td>
+                <a href="/propietario/editar/<%= propietario.Id %>"><i class="fas fa-edit"></i> Editar</a>
+                <a href="/propietario/eliminar/<%= propietario.Id %>" onclick="return 
+                confirm('¿Está seguro de que desea eliminar este propietario?');">
+                <i class="fas fa-trash-alt"></i> Eliminar</a>
+              </td>
+            </tr>
+           <% }); %>
+        </tbody>
+      </table>
+  </div>
+
+  <!-- Botones de Agregar e Ir a Inicio -->
+  <div class="button-container">
+    <a href="/propietario/registrar" class="add-button">Agregar Propietario</a>
+    <a href="/propietario/login" class="home-button">Ir a Inicio</a>
+    
+    <div class="card">
+      <a href="/propietario/login" class="btn"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+  </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Finca</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+
+    /* Estilos para el encabezado */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: #333;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Estilos para el formulario de agregar finca */
+    .add-form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 50px;
+      background-color: #12cbe4;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-form-title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      color: #007bff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0050a6;
+    }
+
+    /* Estilos para los botones de Ir a Inicio y Listar Fincas */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .home-button,
+    .list-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .home-button:hover,
+    .list-button:hover {
+      background-color: #054385;
+    }
+  </style>
+</head>
+<body>
+  <!-- Formulario de Agregar Finca -->
+  <div class="add-form">
+    <h1 class="add-form-title">Agregar Finca</h1>
+    <form method="POST">
+      <label for="nombre"><i class="fas fa-font"></i> Nombre:</label>
+      <input type="text" name="nombre" id="nombre" required>
+
+      <label for="numHectareas"><i class="fas fa-ruler"></i> Número de Hectáreas:</label>
+      <input type="number" name="numHectareas" id="numHectareas" required>
+
+      <label for="metrosCuadrados"><i class="fas fa-ruler-combined"></i> Metros Cuadrados:</label>
+      <input type="number" name="metrosCuadrados" id="metrosCuadrados" required>
+
+      <label for="propietario"><i class="fas fa-user"></i> Propietario:</label>
+      <input type="text" name="propietario" id="propietario" required>
+
+      <label for="capataz"><i class="fas fa-user-tie"></i> Capataz:</label>
+      <input type="text" name="capataz" id="capataz" required>
+
+      <label for="pais"><i class="fas fa-globe"></i> País:</label>
+      <input type="text" name="pais" id="pais" required>
+
+      <label for="departamento"><i class="fas fa-map-marker-alt"></i> Departamento:</label>
+      <input type="text" name="departamento" id="departamento" required>
+
+      <label for="ciudad"><i class="fas fa-city"></i> Ciudad:</label>
+      <input type="text" name="ciudad" id="ciudad" required>
+
+      <label for="si_Produce_Leche"><i class="fas fa-check"></i> si_Produce_Leche:</label>
+      <select id="si_Produce_Leche" name="si_Produce_Leche" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Cereales"><i class="fas fa-seedling"></i> si_Produce_Cereales:</label>
+      <select id="si_Produce_Cereales" name="si_Produce_Cereales" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Frutas"><i class="fas fa-apple-alt"></i> si_Produce_Frutas:</label>
+      <select id="si_Produce_Frutas" name="si_ProduceF_rutas" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Verduras"><i class="fas fa-carrot"></i> si_Produce_Verduras:</label>
+      <select id="si_Produce_Verduras" name="si_Produce_Verduras" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="Propietario_id"><i class="fas fa-id-card"></i> ID del Propietario:</label>
+      <input type="number" name="Propietario_id" id="Propietario_id" required>
+
+      <input type="submit" value="Agregar">
+    </form>
+  </div>
+
+  <!-- Botones de Ir a Inicio y Listar Fincas -->
+  <div class="button-container">
+    <a href="/propietario/login" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/finca/listar" class="list-button"><i class="fas fa-warehouse"></i> Listar Fincas</a>
+  </div>
+</body>
+</html>

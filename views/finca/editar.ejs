@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Finca</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Estilos para el encabezado */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: #333;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .menu-item {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Estilos para el formulario de edición */
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #12cbe4;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button i {
+      margin-right: 5px;
+    }
+
+    button:hover {
+      background-color: #0050a6;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button-container a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-container a i {
+      margin-right: 5px;
+    }
+
+    .button-container a:hover {
+      background-color: #0050a6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Editar Finca</a>
+    <nav class="menu">
+      <a href="/" class="menu-item">Inicio</a>
+      <a href="/finca/listar" class="menu-item">Listar Propietarios</a>
+    </nav>
+  </header>
+  <!-- Formulario de Edición de Finca -->
+  <div class="container">
+    <h1>Editar Finca</h1>
+    <form method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" value="<%= finca.nombre %>" required>
+
+      <label for="numHectareas">Número de Hectáreas:</label>
+      <input type="number" name="numHectareas" id="numHectareas" value="<%= finca.numHectareas %>" required>
+
+      <label for="metrosCuadrados">Metros Cuadrados:</label>
+      <input type="number" name="metrosCuadrados" id="metrosCuadrados" value="<%= finca.metrosCuadrados %>" required>
+
+      <label for="propietario">Propietario:</label>
+      <input type="text" name="propietario" id="propietario" value="<%= finca.propietario %>" required>
+
+      <label for="capataz">Capataz:</label>
+      <input type="text" name="capataz" id="capataz" value="<%= finca.capataz %>" required>
+
+      <label for="pais">País:</label>
+      <input type="text" name="pais" id="pais" value="<%= finca.pais %>" required>
+
+      <label for="departamento">Departamento:</label>
+      <input type="text" name="departamento" id="departamento" value="<%= finca.departamento %>" required>
+
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" name="ciudad" id="ciudad" value="<%= finca.ciudad %>" required>
+
+      <label for="si_Produce_Leche"><i class="fas fa-check"></i> Produce Leche:</label>
+      <select id="si_Produce_Leche" name="si_Produce_Leche" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Cereales"><i class="fas fa-seedling"></i> Produce Cereales:</label>
+      <select id="si_Produce_Cereales" name="si_Produce_Cereales" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Frutas"><i class="fas fa-apple-alt"></i> Produce Frutas:</label>
+      <select id="si_Produce_Frutas" name="si_Produce_Frutas" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="si_Produce_Verduras"><i class="fas fa-carrot"></i> Produce Verduras:</label>
+      <select id="si_Produce_Verduras" name="si_Produce_Verduras" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+      <label for="Propietario_id">ID del Propietario:</label>
+      <input type="number" name="Propietario_id" id="Propietario_id" value="<%= finca.Propietario_id %>" required>
+
+      <button type="submit"><i class="fas fa-save"></i> Guardar cambios</button>
+    </form>
+  </div>
+  <!-- Botones de Ir a Inicio y Listar -->
+  <div class="button-container">
+    <a href="/propietario/login" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/finca/listar" class="list-button"><i class="fas fa-list"></i> Listar finca</a>
+  </div>
+</body>
+</html>

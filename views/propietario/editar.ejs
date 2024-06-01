@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Propietario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el formulario de edición */
+  .edit-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #12cbe4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-form-title {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para los botones de Ir a Inicio y Listar */
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .home-button, .list-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .home-button:hover, .list-button:hover {
+    background-color: #053d7a;
+  }
+  
+  /* Estilos responsive */
+  @media screen and (max-width: 768px) {
+    .logo {
+      font-size: 20px;
+    }
+  
+    .menu-item {
+      margin-left: 10px;
+    }
+  
+    .edit-form {
+      max-width: 500px;
+    }
+  }
+  
+  </style>
+</head>
+<body>
+  <!-- Formulario de Edición -->
+  <div class="edit-form">
+    <h1 class="edit-form-title">Editar Propietario</h1>
+    <form  method="POST">
+      <label for="Id">ID:</label>
+      <input type="text" id="Id" name="Id" value="<%= propietario.Id %>" required><br>
+      <label for="clave">Clave:</label>
+      <input type="password" id="clave" name="clave" value="<%= propietario.clave %>" required><br>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" value="<%= propietario.nombre %>" required><br>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" value="<%= propietario.apellido %>" required><br>
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<%= propietario.fechaNacimiento %>" required><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<%= propietario.email %>" required><br>
+      <label for="genero">Género:</label>
+      <input type="text" id="genero" name="genero" value="<%= propietario.genero %>" required><br>
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" value="<%= propietario.telefono %>" required><br>
+      <button type="submit">Guardar cambios</button>
+    </form>
+  </div>
+  <!-- Botones de Ir a Inicio y Listar -->
+  <div class="button-container">
+    <a href="/propietario/login" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/propietario" class="list-button"><i class="fas fa-list"></i> Listar Propietarios</a>
+  </div>
+</body>
+</html>

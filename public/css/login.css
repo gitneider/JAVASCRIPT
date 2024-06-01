@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el formulario de inicio de sesión */
+  .form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #12cbe4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button i {
+    margin-right: 5px;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  .register-link {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .register-link a {
+    text-decoration: none;
+    color: #122b69;
+  }
+  
+  /* Estilos responsive */
+  @media screen and (max-width: 768px) {
+    .logo {
+      font-size: 20px;
+    }
+  
+    .menu-item {
+      margin-left: 10px;
+    }
+  
+    .form-container {
+      max-width: 300px;
+    }
+  }
+  

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Fincas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6e6e6; /* Cambio de color de fondo */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px; /* Aumento del ancho máximo */
+    margin: 50px auto; /* Aumento de margen superior e inferior */
+    padding: 40px; /* Aumento de relleno */
+    background-color: #ffffff;
+    border-radius: 15px; /* Aumento del radio de borde */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Aumento de la sombra */
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 30px; /* Aumento del margen inferior */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #dddddd; /* Cambio de color del borde */
+}
+
+thead {
+    background-color: #4CAF50; /* Cambio de color de fondo del encabezado */
+    color: #ffffff; /* Cambio de color de texto */
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #f2f2f2; /* Cambio de color de fondo de las filas impares */
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-atras {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px; /* Reducción del radio de borde */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background-color: #007bff; /* Cambio de color para editar */
+}
+
+.btn-eliminar {
+    background-color: #dc3545; /* Cambio de color para eliminar */
+}
+
+.btn-atras {
+    display: block;
+    margin-top: 10px;
+    background-color: #6c757d; /* Cambio de color para el botón "Atrás" */
+    text-align: center;
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover,
+.btn-atras:hover {
+    background-color: #555555; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos de iconos */
+i.fas {
+    margin-right: 5px;
+}
+
+/* Animaciones */
+@keyframes colorChange {
+    0% { background-color: #4CAF50; }
+    25% { background-color: #007bff; }
+    50% { background-color: #dc3545; }
+    75% { background-color: #6c757d; }
+    100% { background-color: #4CAF50; }
+}
+
+table thead {
+    animation: colorChange 5s infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+       
+} 
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Fincas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>NumHectareas</th>
+                    <th>Metros Cuadrados</th>
+                    <th>Propietario</th>
+                    <th>Capataz</th>
+                    <th>Pais</th>
+                    <th>Departamento</th>
+                    <th>Ciudad</th>
+                    <th>Produce Leche</th>
+                    <th>Produce Cereales</th>
+                    <th>Produce Frutas</th>
+                    <th>Produce Verduras</th>
+                    <th>ID del Propietario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (fincas.length === 0) { %>
+                    <tr>
+                        <td colspan="14">No se encontraron fincas.</td>
+                    </tr>
+                <% } else { %>
+                    <% fincas.forEach((finca) => { %>
+                        <tr>
+                            <td><%= finca.nombre %></td>
+                            <td><%= finca.numhectareas %></td>
+                            <td><%= finca.metroscuadrados %></td>
+                            <td><%= finca.propietario %></td>
+                            <td><%= finca.capataz %></td>
+                            <td><%= finca.pais %></td>
+                            <td><%= finca.departamento %></td>
+                            <td><%= finca.ciudad %></td>
+                            <td><%= finca.si_Produce_Leche ? 'Sí' : 'No' %></td>
+                            <td><%= finca.si_Produce_Cereales ? 'Sí' : 'No' %></td>
+                            <td><%= finca.si_Produce_Frutas ? 'Sí' : 'No' %></td>
+                            <td><%= finca.si_Produce_Verduras ? 'Sí' : 'No' %></td>
+                            <td><%= finca.Propietario_id %></td>
+                            <td class="acciones">
+                                <a href="/finca/editar/<%= finca.Id %>"><i class="fas fa-edit"></i> Editar</a>
+                                <a href="/finca/eliminar/<%= finca.Id %>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+        <!-- Botones -->
+        <div class="botones">
+            <a href="/propietario/login" class="boton"><i class="fas fa-home"></i> Ir a Inicio</a>
+            <a href="/finca/agregar" class="boton"><i class="fas fa-plus"></i> Agregar Finca</a>
+        </div>
+    </div>
+</body>
